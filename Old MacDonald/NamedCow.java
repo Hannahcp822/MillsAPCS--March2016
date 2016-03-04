@@ -3,7 +3,7 @@
  * Write a description of class NamedCow here.
  * 
  * @author Hannah Pang  
- * @version March 3, 2016
+ * @version March 4, 2016
  */
 
 public class NamedCow extends Cow
@@ -11,6 +11,12 @@ public class NamedCow extends Cow
     // instance variables - replace the example below with your own
     private String myName;
 
+    /**
+     * Constructor for objects of class NamedCow
+     */
+    public NamedCow()
+    {
+    }
     /**
      * Constructor for objects of class Cow
      */

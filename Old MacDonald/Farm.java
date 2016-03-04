@@ -3,12 +3,12 @@
  * Write a description of class Farm here.
  * 
  * @author Hannah Pang
- * @version March 3, 2016
+ * @version March 4, 2016
  */
 public class Farm
 {
     // instance variables - replace the example below with your own
-    private Animal[] = new Animal[3];
+    private Animal[] a = new Animal[3];
     
     /**
      * Constructor for objects of class Farm
@@ -26,6 +26,9 @@ public class Farm
      */
     public void animalSounds()
     {
-        for(int i = 0; i < a.length; i++) 
+        for(int i = 0; i < a.length; i++) {
+            System.out.println(a[i].getType() + " goes " + a[i].getSound());
+        }
+        System.out.println("The cow is known as " + ((NamedCow)a[0]).getName());
     }
 }

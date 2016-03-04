@@ -3,7 +3,7 @@
  * Write a description of interface Animal here.
  * 
  * @author Hannah Pang
- * @version March 3, 2016
+ * @version March 4, 2016
  */
 
 public interface Animal

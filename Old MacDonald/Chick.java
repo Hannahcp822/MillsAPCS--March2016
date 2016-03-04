@@ -2,8 +2,8 @@
 /**
  * Write a description of class Chick here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hannah Pang
+ * @version March 4, 2016
  */
 
 import java.util.*;
@@ -14,7 +14,13 @@ public class Chick implements Animal
     private String myType;
     private String mySound1;
     private String mySound2 = null;
-
+    
+    /**
+     * Constructor for objects of class Chick
+     */
+    public Chick()
+    {
+    }
     /**
      * Constructor for objects of class Chick (1 sound)
      */
