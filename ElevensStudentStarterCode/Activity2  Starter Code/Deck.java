@@ -5,6 +5,8 @@ import java.util.ArrayList;
  * The Deck class represents a shuffled deck of cards.
  * It provides several operations including
  *      initialize, shuffle, deal, and check if empty.
+ *      
+ * Hannah Pang
  */
 public class Deck {
 
@@ -30,7 +32,11 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+	    for (int i = 0; i < ranks.length; i++) {
+		    Card c = new Card(ranks[i], suits[i], values[i]);
+		    cards.add(c);
+		}
+		size = cards.size();
 	}
 
 
@@ -39,7 +45,7 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return (size == 0);
 	}
 
 	/**
@@ -47,7 +53,7 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size;
 	}
 
 	/**
@@ -64,7 +70,9 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		Card cardDealt = cards.get(size-1);
+		size--;
+		return cardDealt;
 	}
 
 	/**
