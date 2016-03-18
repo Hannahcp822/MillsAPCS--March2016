@@ -32,8 +32,9 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
+	    cards = new ArrayList<Card>();
 	    for (int i = 0; i < ranks.length; i++) {
-		    Card c = new Card(ranks[i], suits[i], values[i]);
+	        Card c = new Card(ranks[i], suits[i], values[i]);
 		    cards.add(c);
 		}
 		size = cards.size();
@@ -70,9 +71,8 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		Card cardDealt = cards.get(size-1);
 		size--;
-		return cardDealt;
+		return cards.get(size);
 	}
 
 	/**
