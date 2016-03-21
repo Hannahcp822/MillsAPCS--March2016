@@ -1,5 +1,7 @@
 /**
  * This is a class that tests the Deck class.
+ * 
+ * Hannah Pang
  */
 public class DeckTester {
 

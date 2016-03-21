@@ -1,10 +1,13 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * The Deck class represents a shuffled deck of cards.
  * It provides several operations including
  *      initialize, shuffle, deal, and check if empty.
+ *      
+ * Hannah Pang
  */
 public class Deck {
 
@@ -62,7 +65,15 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		Random r = new Random();
+        int randomIndex;
+        for (int k = (size - 1); k > 0; k--) {
+            randomIndex = r.nextInt(size);
+            Card temp1 = cards.get(k);
+            Card temp2 = cards.get(randomIndex);
+            cards.get(k) = temp2;
+            cards.get(randomIndex) = temp1;
+        }
 	}
 
 	/**

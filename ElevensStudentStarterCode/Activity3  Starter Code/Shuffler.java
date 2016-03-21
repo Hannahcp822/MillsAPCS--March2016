@@ -12,7 +12,7 @@ public class Shuffler {
      * The number of consecutive shuffle steps to be performed in each call
      * to each sorting procedure.
      */
-    private static final int SHUFFLE_COUNT = 1;
+    private static final int SHUFFLE_COUNT = 5;
 
 
     /**
@@ -22,7 +22,9 @@ public class Shuffler {
     public static void main(String[] args) {
         System.out.println("Results of " + SHUFFLE_COUNT +
                                  " consecutive perfect shuffles:");
-        int[] values1 = {0, 1, 2, 3};
+        int[] values1 = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        // int[] values1 = {11, 50, 2, 8, 16, 12, 88, 101, 24, 34};
+        // int[] values1 = {5, 4, 3, 2, 1};
         for (int j = 1; j <= SHUFFLE_COUNT; j++) {
             perfectShuffle(values1);
             System.out.print("  " + j + ":");
@@ -35,7 +37,9 @@ public class Shuffler {
 
         System.out.println("Results of " + SHUFFLE_COUNT +
                                  " consecutive efficient selection shuffles:");
-        int[] values2 = {0, 1, 2, 3};
+        int[] values2 = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        // int[] values2 = {11, 50, 2, 8, 16, 12, 88, 101, 24, 34};
+        // int[] values2 = {5, 4, 3, 2, 1};
         for (int j = 1; j <= SHUFFLE_COUNT; j++) {
             selectionShuffle(values2);
             System.out.print("  " + j + ":");
@@ -55,17 +59,26 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void perfectShuffle(int[] values) {
-        int[] cards = values;
         int[] shuffled = new int[values.length];
+        int middle;
+        if ((values.length % 2) == 0) {
+            middle = (values.length / 2);
+        } else {
+            middle = (values.length / 2) + 1;
+        }
         int k = 0;
-        for (int j = 0; j < values.length / 2; j++) {
-            shuffled[k] = cards[j];
+        for (int j = 0; j < middle; j++) {
+            shuffled[k] = values[j];
             k+=2;
         }
         k = 1;
-        for (int j = values.length / 2; j < values.length; j++) {
-            shuffled[k] = cards[j];
+        for (int j = middle; j < values.length; j++) {
+            shuffled[k] = values[j];
             k+=2;
+        }
+        
+        for (int i = 0; i < values.length; i++) {
+            values[i] = shuffled[i];
         }
     }
 
@@ -81,14 +94,13 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void selectionShuffle(int[] values) {
-        int[] cards = values;
-        Random random = new Random(values.length);
-        int r;
-        for (int k = values.length - 1; k > 0; k--) {
-            r = random.nextInt();
-            int temp = cards[k];
-            cards[k] = cards[r];
-            cards[r] = temp;
+        Random r = new Random();
+        int randomIndex;
+        for (int k = (values.length - 1); k > 0; k--) {
+            randomIndex = r.nextInt(values.length);
+            int temp = values[k];
+            values[k] = values[randomIndex];
+            values[randomIndex] = temp;
         }
     }
 }
