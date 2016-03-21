@@ -34,10 +34,12 @@ public class Deck {
 	public Deck(String[] ranks, String[] suits, int[] values) {
 	    cards = new ArrayList<Card>();
 	    for (int i = 0; i < ranks.length; i++) {
-	        Card c = new Card(ranks[i], suits[i], values[i]);
-		    cards.add(c);
+	        for (String suitString : suits) {
+				cards.add(new Card(ranks[i], suitString, values[i]));
+			}
 		}
 		size = cards.size();
+		shuffle();
 	}
 
 
@@ -71,7 +73,10 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		size--;
+		if (isEmpty()) {
+			return null;
+		}
+	    size--;
 		return cards.get(size);
 	}
 
