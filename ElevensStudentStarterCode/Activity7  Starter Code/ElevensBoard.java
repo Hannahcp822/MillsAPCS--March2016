@@ -33,7 +33,7 @@ public class ElevensBoard {
 	/**
 	 * The cards on this board.
 	 */
-	private Card[] cards;
+	private Card[] cards; 
 
 	/**
 	 * The deck of cards being used to play the current game.
