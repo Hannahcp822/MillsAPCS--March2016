@@ -1,3 +1,5 @@
+package Buggy1;
+
 /**
  * This is a class that tests the Deck class using assert statements.
  */
@@ -92,7 +94,7 @@ public class DeckTester {
 	 * Check that the given deck is empty.
 	 * @param d is a deck that should be empty.
 	 */
-	private static void testEmpty(Deck d) {
+	private static void testEmpty(Deck d) { 
 		assert d.size() == 0 :  "Size for an empty deck is " + d.size()
 			+ ". It should be 0.";
 		assert d.isEmpty() : "isEmpty is false for an empty deck.";
