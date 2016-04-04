@@ -54,6 +54,7 @@ public class DeckTester {
         System.out.println();
 
         /* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+        // Create a standard deck of 52 cards and test the shuffle method
         System.out.println("Standard Deck of 52 cards, shuffled");
         System.out.println();
         String[] standardRanks = {"ace", "two", "three", "four", "five", "six", "seven",

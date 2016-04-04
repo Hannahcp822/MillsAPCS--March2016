@@ -1,7 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Random;
-
 /**
  * The Deck class represents a shuffled deck of cards.
  * It provides several operations including
@@ -9,6 +5,11 @@ import java.util.Random;
  *      
  * Hannah Pang
  */
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Deck {
 
 	/**
